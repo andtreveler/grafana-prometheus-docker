@@ -1,0 +1,22 @@
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  # scrape_timeout is set to the global default (10s).
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+
+  - job_name: this
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['34.88.149.252:9100']
+
+  - job_name: jenkins
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['34.65.29.3:9100']
+
+  - job_name: gitlab
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['34.65.209.167:9100']
